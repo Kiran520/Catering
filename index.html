@@ -202,7 +202,7 @@
     </div>
 
     <!-- Background Crossfade + Zoom Script -->
-  <script>
+    <script>
   const images = [
     'images/bg_1.jpg',
     'images/bg_2.jpg',
@@ -211,35 +211,32 @@
   ];
 
   const divs = document.querySelectorAll('.bg-slideshow');
-  let current = 0; // currently visible div
-  let imgIndex = 0; // current image index
+  let currentDiv = 0;      // currently visible div
+  let nextImage = 1;        // next image index
 
   // Initialize first two images
   divs[0].style.backgroundImage = `url('${images[0]}')`;
   divs[1].style.backgroundImage = `url('${images[1]}')`;
 
-  // Start Ken Burns animation
+  // Ken Burns animation
   divs[0].style.animation = 'zoom 20s ease-in-out infinite';
   divs[1].style.animation = 'zoom 20s ease-in-out infinite';
 
   setInterval(() => {
-    // Calculate next div and next image
-    const nextDiv = 1 - current;
-    imgIndex = (imgIndex + 1) % images.length;
+    const nextDiv = 1 - currentDiv; // alternate div
+    divs[nextDiv].style.backgroundImage = `url('${images[nextImage]}')`;
 
-    // Set next image BEFORE fading in
-    divs[nextDiv].style.backgroundImage = `url('${images[imgIndex]}')`;
-
-    // Crossfade
-    divs[current].classList.remove('opacity-100');
-    divs[current].classList.add('opacity-0');
+    // Fade transition
+    divs[currentDiv].classList.remove('opacity-100');
+    divs[currentDiv].classList.add('opacity-0');
 
     divs[nextDiv].classList.remove('opacity-0');
     divs[nextDiv].classList.add('opacity-100');
 
-    // Switch current
-    current = nextDiv;
-  }, 5000); // change every 5s
+    // Prepare next image index
+    nextImage = (nextImage + 1) % images.length;
+    currentDiv = nextDiv; // switch div
+  }, 5000);
 </script>
   </body>
 </html>
