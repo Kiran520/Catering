@@ -24,6 +24,17 @@
         font-family: "Playfair Display", serif;
       }
 
+      /* 🔶 Full Page Background */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url('images/bg_1.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -20;
+      }
+
       /* 🔶 Header Animated Background */
       .header-slider {
         width: 100%;
@@ -37,13 +48,16 @@
         0% { background-image: url('images/bg_1.jpg'); }
         25% { background-image: url('images/bg_2.jpg'); }
         50% { background-image: url('images/bg_3.jpg'); }
-        75% { background-image: url('images/bg_1.jpg'); }
-        100% { background-image: url('images/bg_2.jpg'); }
+        75% { background-image: url('images/bg_4.jpg'); }
+        100% { background-image: url('images/bg_1.jpg'); }
       }
     </style>
   </head>
 
   <body class="relative text-gray-800">
+    <!-- 🔶 Optional overlay for readability -->
+    <div class="fixed inset-0 bg-black/20 -z-10"></div>
+
     <!-- 🔶 Main Content -->
     <div class="relative z-10">
       <!-- 🔶 Header with scrolling background -->
@@ -51,7 +65,7 @@
         <!-- ✅ Animated Background -->
         <div class="absolute inset-0 -z-10">
           <div class="header-slider"></div>
-          <!-- Optional Orange Overlay -->
+          <!-- Orange overlay for readability -->
           <div class="absolute inset-0 bg-orange-600 bg-opacity-50"></div>
         </div>
 
