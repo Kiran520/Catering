@@ -202,38 +202,44 @@
     </div>
 
     <!-- Background Crossfade + Zoom Script -->
-    <script>
-      const images = [
-        'images/bg_1.jpg',
-        'images/bg_2.jpg',
-        'images/bg_3.jpg',
-        'images/bg_4.jpg'
-      ];
+  <script>
+  const images = [
+    'images/bg_1.jpg',
+    'images/bg_2.jpg',
+    'images/bg_3.jpg',
+    'images/bg_4.jpg'
+  ];
 
-      const divs = document.querySelectorAll('.bg-slideshow');
-      let current = 0;
-      let next = 1;
+  const divs = document.querySelectorAll('.bg-slideshow');
+  let current = 0; // currently visible div
+  let imgIndex = 0; // current image index
 
-      // Set initial images
-      divs[0].style.backgroundImage = `url('${images[0]}')`;
-      divs[1].style.backgroundImage = `url('${images[1]}')`;
+  // Initialize first two images
+  divs[0].style.backgroundImage = `url('${images[0]}')`;
+  divs[1].style.backgroundImage = `url('${images[1]}')`;
 
-      setInterval(() => {
-        // Crossfade
-        divs[current].classList.remove('opacity-100');
-        divs[current].classList.add('opacity-0');
+  // Start Ken Burns animation
+  divs[0].style.animation = 'zoom 20s ease-in-out infinite';
+  divs[1].style.animation = 'zoom 20s ease-in-out infinite';
 
-        divs[next].classList.remove('opacity-0');
-        divs[next].classList.add('opacity-100');
+  setInterval(() => {
+    // Calculate next div and next image
+    const nextDiv = 1 - current;
+    imgIndex = (imgIndex + 1) % images.length;
 
-        // Update index
-        current = next;
-        next = (next + 1) % images.length;
+    // Set next image BEFORE fading in
+    divs[nextDiv].style.backgroundImage = `url('${images[imgIndex]}')`;
 
-        // Preload upcoming image
-        const upcoming = (next + 1) % images.length;
-        divs[next].style.backgroundImage = `url('${images[upcoming]}')`;
-      }, 5000);
-    </script>
+    // Crossfade
+    divs[current].classList.remove('opacity-100');
+    divs[current].classList.add('opacity-0');
+
+    divs[nextDiv].classList.remove('opacity-0');
+    divs[nextDiv].classList.add('opacity-100');
+
+    // Switch current
+    current = nextDiv;
+  }, 5000); // change every 5s
+</script>
   </body>
 </html>
