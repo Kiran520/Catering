@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>South Indian Catering Menu | Authentic Flavours</title>
 
-    <!-- ✅ Tailwind CSS via CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Optional Google Fonts -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
@@ -24,13 +24,14 @@
         font-family: "Playfair Display", serif;
       }
 
-      /* Background fade + zoom animation */
-      #bg-slideshow {
-        transition: opacity 1s ease-in-out, transform 20s ease-in-out;
+      /* Slideshow divs */
+      .bg-slideshow {
+        transition: opacity 1s ease-in-out;
         transform: scale(1);
+        animation: zoom 20s ease-in-out infinite;
       }
 
-      /* Ken Burns zoom in/out effect */
+      /* Ken Burns zoom animation */
       @keyframes zoom {
         0% {
           transform: scale(1);
@@ -46,18 +47,18 @@
   </head>
 
   <body class="relative text-gray-800 overflow-x-hidden">
-    <!-- 🔶 Background Slideshow -->
-    <div
-      id="bg-slideshow"
-      class="absolute inset-0 bg-cover bg-center z-0 opacity-100"
-    ></div>
+    <!-- 🔶 Background Slideshow with Crossfade -->
+    <div id="bg-container" class="absolute inset-0 z-0 overflow-hidden">
+      <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-100"></div>
+      <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-0"></div>
+    </div>
 
-    <!-- 🔶 Optional light overlay for readability -->
+    <!-- 🔶 Overlay -->
     <div class="absolute inset-0 bg-black/20 z-0"></div>
 
     <!-- 🔶 Main Content -->
     <div class="relative z-10">
-      <!-- 🔶 Header -->
+      <!-- Header -->
       <header
         class="bg-green-600 bg-opacity-70 text-white py-6 shadow-lg backdrop-blur-sm"
       >
@@ -69,7 +70,7 @@
         </div>
       </header>
 
-      <!-- 🍛 Menu Section -->
+      <!-- Menu Section -->
       <section class="py-16 px-6 lg:px-24">
         <div class="text-center mb-12">
           <p class="text-gray-100 text-lg drop-shadow-md">
@@ -78,15 +79,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- 🌿 Veg Starters -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4"
-            >
-              🌿 Veg Starters
-            </h3>
+          <!-- Veg Starters -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🌿 Veg Starters</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Spring Rolls</li>
               <li>Gobi 65</li>
@@ -99,15 +94,9 @@
             </ul>
           </div>
 
-          <!-- 🍗 Non-Veg Starters -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4"
-            >
-              🍗 Non-Veg Starters
-            </h3>
+          <!-- Non-Veg Starters -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍗 Non-Veg Starters</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Chicken 65</li>
               <li>Chilli Chicken</li>
@@ -115,15 +104,9 @@
             </ul>
           </div>
 
-          <!-- 🍛 Dal Specials -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4"
-            >
-              🍛 Dal Specials
-            </h3>
+          <!-- Dal Specials -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Dal Specials</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Tomato Pappu</li>
               <li>Palak Dal</li>
@@ -131,15 +114,9 @@
             </ul>
           </div>
 
-          <!-- 🥘 Veg Curries -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4"
-            >
-              🥘 Veg Curries
-            </h3>
+          <!-- Veg Curries -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🥘 Veg Curries</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Paneer Butter Masala</li>
               <li>Chana Paneer Masala</li>
@@ -149,15 +126,9 @@
             </ul>
           </div>
 
-          <!-- 🥦 Vegetable Fries -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4"
-            >
-              🥦 Vegetable Fries
-            </h3>
+          <!-- Vegetable Fries -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4">🥦 Vegetable Fries</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Bendakaya Fry (Okra)</li>
               <li>Aloo Fry</li>
@@ -166,15 +137,9 @@
             </ul>
           </div>
 
-          <!-- 🍖 Non-Veg Curries -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4"
-            >
-              🍖 Non-Veg Curries
-            </h3>
+          <!-- Non-Veg Curries -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍖 Non-Veg Curries</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Chicken Curry</li>
               <li>Butter Chicken</li>
@@ -185,15 +150,9 @@
             </ul>
           </div>
 
-          <!-- 🍚 Biryani Specials -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4"
-            >
-              🍚 Biryani Specials
-            </h3>
+          <!-- Biryani Specials -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4">🍚 Biryani Specials</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Mix Veg Biryani</li>
               <li>Chicken Biryani</li>
@@ -203,15 +162,9 @@
             </ul>
           </div>
 
-          <!-- 🍛 Rice Varieties -->
-          <div
-            class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition"
-          >
-            <h3
-              class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4"
-            >
-              🍛 Rice Varieties
-            </h3>
+          <!-- Rice Varieties -->
+          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+            <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Rice Varieties</h3>
             <ul class="list-disc list-inside text-white space-y-1">
               <li>Pulihora (Tamarind Rice)</li>
               <li>Mint Rice</li>
@@ -225,7 +178,7 @@
           </div>
         </div>
 
-        <!-- ✅ WhatsApp CTA -->
+        <!-- WhatsApp CTA -->
         <div class="text-center mt-16">
           <p class="text-gray-100 mb-3 text-lg drop-shadow-md">
             Authentic South Indian Flavours • Customizable Packages • Veg & Non-Veg Options
@@ -236,30 +189,19 @@
             target="_blank"
             class="flex items-center justify-center gap-2 bg-green-600 bg-opacity-90 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition shadow-md w-fit mx-auto"
           >
-            <svg
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.04 2C7.05 2 3 6.03 3 11.02c0 1.63.43 3.2 1.25 4.58L3.01 21.01l5.02-1.32c1.26.69 2.67 1.07 4.01 1.07 4.99 0 9.04-4.03 9.04-9.02C21.08 6.03 17.03 2 12.04 2zm4.72 13.62c-.17.3-.34.32-.6.31-.25-.01-.7-.16-.9-.37-.2-.2-.77-.96-.89-1.16-.12-.2-.24-.2-.42-.2-.18 0-.39-.06-.6-.06-.2 0-.52.2-.79.48-.27.28-1.04 1.05-1.27 1.28-.23.23-.45.26-.83.1-.38-.16-1.61-.59-2.61-1.61-.8-.8-1.07-1.44-1.2-1.66-.12-.22-.01-.34.1-.45.1-.1.22-.24.32-.37.1-.12.16-.2.24-.34.08-.14.04-.26-.02-.37-.06-.1-.6-.25-1.04-.37-.44-.12-.38-.1-.38-.28-.01-.18-.01-.38-.01-.57-.01-.19-.36-.45-.48-.6-.12-.14-.25-.2-.42-.2-.17 0-.34.06-.52.06-.18 0-.42.2-.64.42-.22.22-.57.56-.57 1.37 0 .81.6 1.58.69 1.69.09.1.9 1.56 2.18 2.68 1.28 1.12 2.38 1.45 2.69 1.58.31.13.59.1.8-.02.2-.12.8-.32.99-.48.19-.16.32-.2.48-.12.16.08.97.46 1.17.58.2.12.34.18.48.18.14 0 .97.02 1.69-.65.72-.67 1.2-1.24 1.4-1.5.2-.26.2-.48.14-.58z"
-              />
-            </svg>
-            <span data-lang="en">Join WhatsApp Group</span>
-            <span data-lang="de" class="hidden">WhatsApp-Gruppe beitreten</span>
+            <span>Join WhatsApp Group</span>
           </a>
         </div>
       </section>
 
-      <!-- 🧡 Footer -->
+      <!-- Footer -->
       <footer class="bg-gray-800 bg-opacity-70 text-gray-200 py-6 text-center mt-12 backdrop-blur-sm">
         <p>&copy; 2025 Taste of South India. All Rights Reserved.</p>
         <p>Made with ❤️ in Vienna</p>
       </footer>
     </div>
 
-    <!-- 🔶 Background Slideshow Script -->
+    <!-- Background Crossfade + Zoom Script -->
     <script>
       const images = [
         'images/bg_1.jpg',
@@ -268,29 +210,30 @@
         'images/bg_4.jpg'
       ];
 
-      let index = 0;
-      const bgDiv = document.getElementById('bg-slideshow');
+      const divs = document.querySelectorAll('.bg-slideshow');
+      let current = 0;
+      let next = 1;
 
-      function changeBackground() {
-        // Fade out
-        bgDiv.style.opacity = 0;
+      // Set initial images
+      divs[0].style.backgroundImage = `url('${images[0]}')`;
+      divs[1].style.backgroundImage = `url('${images[1]}')`;
 
-        setTimeout(() => {
-          // Change image
-          bgDiv.style.backgroundImage = `url('${images[index]}')`;
-          index = (index + 1) % images.length;
-          // Fade in and restart zoom
-          bgDiv.style.opacity = 1;
-          bgDiv.style.animation = 'zoom 20s ease-in-out infinite';
-        }, 1000);
-      }
+      setInterval(() => {
+        // Crossfade
+        divs[current].classList.remove('opacity-100');
+        divs[current].classList.add('opacity-0');
 
-      // Initial background + zoom
-      bgDiv.style.backgroundImage = `url('${images[0]}')`;
-      bgDiv.style.animation = 'zoom 20s ease-in-out infinite';
+        divs[next].classList.remove('opacity-0');
+        divs[next].classList.add('opacity-100');
 
-      // Change background every 5 seconds
-      setInterval(changeBackground, 5000);
+        // Update index
+        current = next;
+        next = (next + 1) % images.length;
+
+        // Preload upcoming image
+        const upcoming = (next + 1) % images.length;
+        divs[next].style.backgroundImage = `url('${images[upcoming]}')`;
+      }, 5000);
     </script>
   </body>
 </html>
