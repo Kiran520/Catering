@@ -24,7 +24,7 @@
         font-family: "Playfair Display", serif;
       }
 
-      /* Slideshow divs */
+      /* Background slideshow */
       .bg-slideshow {
         transition: opacity 1s ease-in-out;
         transform: scale(1);
@@ -43,11 +43,19 @@
           transform: scale(1);
         }
       }
+
+      /* Hover zoom for card backgrounds */
+      .card-bg {
+        transition: transform 4s ease-in-out;
+      }
+      .card-bg:hover {
+        transform: scale(1.05);
+      }
     </style>
   </head>
 
   <body class="relative text-gray-800 overflow-x-hidden">
-    <!-- 🔶 Background Slideshow with Crossfade -->
+    <!-- 🔶 Background Slideshow -->
     <div id="bg-container" class="absolute inset-0 z-0 overflow-hidden">
       <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-100"></div>
       <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-0"></div>
@@ -59,9 +67,7 @@
     <!-- 🔶 Main Content -->
     <div class="relative z-10">
       <!-- Header -->
-      <header
-        class="bg-green-600 bg-opacity-70 text-white py-6 shadow-lg backdrop-blur-sm"
-      >
+      <header class="bg-green-600 bg-opacity-70 text-white py-6 shadow-lg backdrop-blur-sm">
         <div class="container mx-auto text-center">
           <h1 class="text-4xl font-bold drop-shadow-md">Taste of South India</h1>
           <p class="text-lg mt-2 drop-shadow-md">
@@ -79,103 +85,137 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           <!-- Veg Starters -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🌿 Veg Starters</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Spring Rolls</li>
-              <li>Gobi 65</li>
-              <li>Samosa</li>
-              <li>Veg Pakoda</li>
-              <li>Paneer Pakoda</li>
-              <li>Onion Pakoda</li>
-              <li>Veg Manchurian</li>
-              <li>Meal Maker 65</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/veg_starters.jpg" alt="Veg Starters" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🌿 Veg Starters</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Spring Rolls</li>
+                <li>Gobi 65</li>
+                <li>Samosa</li>
+                <li>Veg Pakoda</li>
+                <li>Paneer Pakoda</li>
+                <li>Onion Pakoda</li>
+                <li>Veg Manchurian</li>
+                <li>Meal Maker 65</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Non-Veg Starters -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍗 Non-Veg Starters</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Chicken 65</li>
-              <li>Chilli Chicken</li>
-              <li>Chicken Majestic</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/nonveg_starters.jpg" alt="Non-Veg Starters" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍗 Non-Veg Starters</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Chicken 65</li>
+                <li>Chilli Chicken</li>
+                <li>Chicken Majestic</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Dal Specials -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Dal Specials</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Tomato Pappu</li>
-              <li>Palak Dal</li>
-              <li>Mango Dal (Seasonal)</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/dal_specials.jpg" alt="Dal Specials" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Dal Specials</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Tomato Pappu</li>
+                <li>Palak Dal</li>
+                <li>Mango Dal (Seasonal)</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Veg Curries -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🥘 Veg Curries</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Paneer Butter Masala</li>
-              <li>Chana Paneer Masala</li>
-              <li>Chole Curry</li>
-              <li>Aloo Mutter Kurma</li>
-              <li>Mirchi Ka Salan</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/veg_curries.jpg" alt="Veg Curries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🥘 Veg Curries</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Paneer Butter Masala</li>
+                <li>Chana Paneer Masala</li>
+                <li>Chole Curry</li>
+                <li>Aloo Mutter Kurma</li>
+                <li>Mirchi Ka Salan</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Vegetable Fries -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4">🥦 Vegetable Fries</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Bendakaya Fry (Okra)</li>
-              <li>Aloo Fry</li>
-              <li>Cauliflower Fry</li>
-              <li>Aritikaya Fry (Raw Banana)</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/veg_fries.jpg" alt="Vegetable Fries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4">🥦 Vegetable Fries</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Bendakaya Fry (Okra)</li>
+                <li>Aloo Fry</li>
+                <li>Cauliflower Fry</li>
+                <li>Aritikaya Fry (Raw Banana)</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Non-Veg Curries -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍖 Non-Veg Curries</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Chicken Curry</li>
-              <li>Butter Chicken</li>
-              <li>Chicken Fry</li>
-              <li>Mutton Fry</li>
-              <li>Mutton Curry</li>
-              <li>Fish Pulusu</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/nonveg_curries.jpg" alt="Non-Veg Curries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍖 Non-Veg Curries</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Chicken Curry</li>
+                <li>Butter Chicken</li>
+                <li>Chicken Fry</li>
+                <li>Mutton Fry</li>
+                <li>Mutton Curry</li>
+                <li>Fish Pulusu</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Biryani Specials -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4">🍚 Biryani Specials</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Mix Veg Biryani</li>
-              <li>Chicken Biryani</li>
-              <li>Mutton Biryani</li>
-              <li>Paneer Biryani</li>
-              <li>Egg Biryani</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/biryani_specials.jpg" alt="Biryani Specials" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4">🍚 Biryani Specials</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Mix Veg Biryani</li>
+                <li>Chicken Biryani</li>
+                <li>Mutton Biryani</li>
+                <li>Paneer Biryani</li>
+                <li>Egg Biryani</li>
+              </ul>
+            </div>
           </div>
 
           <!-- Rice Varieties -->
-          <div class="bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
-            <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Rice Varieties</h3>
-            <ul class="list-disc list-inside text-white space-y-1">
-              <li>Pulihora (Tamarind Rice)</li>
-              <li>Mint Rice</li>
-              <li>Lemon Rice</li>
-              <li>Chintapandu Pulihora</li>
-              <li>Egg Rice</li>
-              <li>Jeera Rice</li>
-              <li>Bagara Rice</li>
-              <li>Veg Pulao</li>
-            </ul>
+          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
+            <img src="images/rice_varieties.jpg" alt="Rice Varieties" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Rice Varieties</h3>
+              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+                <li>Pulihora (Tamarind Rice)</li>
+                <li>Mint Rice</li>
+                <li>Lemon Rice</li>
+                <li>Chintapandu Pulihora</li>
+                <li>Egg Rice</li>
+                <li>Jeera Rice</li>
+                <li>Bagara Rice</li>
+                <li>Veg Pulao</li>
+              </ul>
+            </div>
           </div>
+
         </div>
 
         <!-- WhatsApp CTA -->
@@ -183,7 +223,6 @@
           <p class="text-gray-100 mb-3 text-lg drop-shadow-md">
             Authentic South Indian Flavours • Customizable Packages • Veg & Non-Veg Options
           </p>
-
           <a
             href="https://chat.whatsapp.com/HJW0ESrA45ICDrRFYCpORY?mode=wwt"
             target="_blank"
@@ -203,40 +242,36 @@
 
     <!-- Background Crossfade + Zoom Script -->
     <script>
-  const images = [
-    'images/bg_1.jpg',
-    'images/bg_2.jpg',
-    'images/bg_3.jpg',
-    'images/bg_4.jpg'
-  ];
+      const images = [
+        "images/bg_1.jpg",
+        "images/bg_2.jpg",
+        "images/bg_3.jpg",
+        "images/bg_4.jpg",
+      ];
 
-  const divs = document.querySelectorAll('.bg-slideshow');
-  let currentDiv = 0;      // currently visible div
-  let nextImage = 1;        // next image index
+      const divs = document.querySelectorAll(".bg-slideshow");
+      let currentDiv = 0;
+      let nextImage = 1;
 
-  // Initialize first two images
-  divs[0].style.backgroundImage = `url('${images[0]}')`;
-  divs[1].style.backgroundImage = `url('${images[1]}')`;
+      divs[0].style.backgroundImage = `url('${images[0]}')`;
+      divs[1].style.backgroundImage = `url('${images[1]}')`;
 
-  // Ken Burns animation
-  divs[0].style.animation = 'zoom 20s ease-in-out infinite';
-  divs[1].style.animation = 'zoom 20s ease-in-out infinite';
+      divs[0].style.animation = "zoom 20s ease-in-out infinite";
+      divs[1].style.animation = "zoom 20s ease-in-out infinite";
 
-  setInterval(() => {
-    const nextDiv = 1 - currentDiv; // alternate div
-    divs[nextDiv].style.backgroundImage = `url('${images[nextImage]}')`;
+      setInterval(() => {
+        const nextDiv = 1 - currentDiv;
+        divs[nextDiv].style.backgroundImage = `url('${images[nextImage]}')`;
 
-    // Fade transition
-    divs[currentDiv].classList.remove('opacity-100');
-    divs[currentDiv].classList.add('opacity-0');
+        divs[currentDiv].classList.remove("opacity-100");
+        divs[currentDiv].classList.add("opacity-0");
 
-    divs[nextDiv].classList.remove('opacity-0');
-    divs[nextDiv].classList.add('opacity-100');
+        divs[nextDiv].classList.remove("opacity-0");
+        divs[nextDiv].classList.add("opacity-100");
 
-    // Prepare next image index
-    nextImage = (nextImage + 1) % images.length;
-    currentDiv = nextDiv; // switch div
-  }, 5000);
-</script>
+        nextImage = (nextImage + 1) % images.length;
+        currentDiv = nextDiv;
+      }, 5000);
+    </script>
   </body>
 </html>
