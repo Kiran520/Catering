@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>South Indian Catering Menu | Authentic Flavours</title>
+    <title>Taste of South India | Catering Menu</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
@@ -24,14 +24,12 @@
         font-family: "Playfair Display", serif;
       }
 
-      /* Background slideshow */
+      /* Slideshow Background */
       .bg-slideshow {
         transition: opacity 1s ease-in-out;
         transform: scale(1);
         animation: zoom 20s ease-in-out infinite;
       }
-
-      /* Ken Burns zoom animation */
       @keyframes zoom {
         0% {
           transform: scale(1);
@@ -44,21 +42,12 @@
         }
       }
 
-      /* Hover zoom for card images */
-      .card-bg {
+      /* Right-side image zoom */
+      .card-img {
         transition: transform 4s ease-in-out;
       }
-      .card-bg:hover {
-        transform: scale(1.05);
-      }
-
-      /* Soft gradient overlay for PNG visibility */
-      .card-overlay {
-        background: linear-gradient(
-          to bottom right,
-          rgba(255, 255, 255, 0.15),
-          rgba(255, 255, 255, 0.05)
-        );
+      .card:hover .card-img {
+        transform: scale(1.08);
       }
     </style>
   </head>
@@ -69,39 +58,34 @@
       <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-100"></div>
       <div class="bg-slideshow absolute inset-0 bg-cover bg-center opacity-0"></div>
     </div>
+    <div class="absolute inset-0 bg-black/25 z-0"></div>
 
-    <!-- 🔶 Overlay -->
-    <div class="absolute inset-0 bg-black/20 z-0"></div>
-
-    <!-- 🔶 Main Content -->
+    <!-- 🔶 Content -->
     <div class="relative z-10">
       <!-- Header -->
-      <header class="bg-green-600 bg-opacity-70 text-white py-6 shadow-lg backdrop-blur-sm">
-        <div class="container mx-auto text-center">
+      <header class="bg-green-700/70 text-white py-6 shadow-lg backdrop-blur-sm">
+        <div class="text-center">
           <h1 class="text-4xl font-bold drop-shadow-md">Taste of South India</h1>
-          <p class="text-lg mt-2 drop-shadow-md">
-            Authentic South Indian Dishes for Every Occasion
-          </p>
+          <p class="text-lg mt-2">Authentic South Indian Dishes for Every Occasion</p>
         </div>
       </header>
 
-      <!-- Menu Section -->
-      <section class="py-16 px-6 lg:px-24">
+      <!-- Menu -->
+      <section class="py-16 px-6 lg:px-20">
         <div class="text-center mb-12">
           <p class="text-gray-100 text-lg drop-shadow-md">
             Delicious Veg & Non-Veg Dishes • Parties • Cultural Events
           </p>
         </div>
 
+        <!-- Menu Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- Veg Starters -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_starters.png" alt="Veg Starters" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🌿 Veg Starters</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <!-- Example Card -->
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-green-700 mb-4">🌿 Veg Starters</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Spring Rolls</li>
                 <li>Gobi 65</li>
                 <li>Samosa</li>
@@ -112,43 +96,52 @@
                 <li>Meal Maker 65</li>
               </ul>
             </div>
+            <img
+              src="images/veg_starters.png"
+              alt="Veg Starters"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Non-Veg Starters -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/nonveg_starters.png" alt="Non-Veg Starters" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍗 Non-Veg Starters</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-red-700 mb-4">🍗 Non-Veg Starters</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Chicken 65</li>
                 <li>Chilli Chicken</li>
                 <li>Chicken Majestic</li>
               </ul>
             </div>
+            <img
+              src="images/nonveg_starters.png"
+              alt="Non-Veg Starters"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Dal Specials -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/dal_specials.png" alt="Dal Specials" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Dal Specials</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-yellow-700 mb-4">🍛 Dal Specials</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Tomato Pappu</li>
                 <li>Palak Dal</li>
                 <li>Mango Dal (Seasonal)</li>
               </ul>
             </div>
+            <img
+              src="images/dal_specials.png"
+              alt="Dal Specials"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Veg Curries -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_curries.png" alt="Veg Curries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🥘 Veg Curries</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-green-700 mb-4">🥘 Veg Curries</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Paneer Butter Masala</li>
                 <li>Chana Paneer Masala</li>
                 <li>Chole Curry</li>
@@ -156,30 +149,36 @@
                 <li>Mirchi Ka Salan</li>
               </ul>
             </div>
+            <img
+              src="images/veg_curries.png"
+              alt="Veg Curries"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
-          <!-- Vegetable Fries -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_fries.png" alt="Vegetable Fries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4">🥦 Vegetable Fries</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <!-- Veg Fries -->
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-orange-700 mb-4">🥦 Veg Fries</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Bendakaya Fry (Okra)</li>
                 <li>Aloo Fry</li>
                 <li>Cauliflower Fry</li>
                 <li>Aritikaya Fry (Raw Banana)</li>
               </ul>
             </div>
+            <img
+              src="images/veg_fries.png"
+              alt="Veg Fries"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Non-Veg Curries -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/nonveg_curries.png" alt="Non-Veg Curries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍖 Non-Veg Curries</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-red-700 mb-4">🍖 Non-Veg Curries</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Chicken Curry</li>
                 <li>Butter Chicken</li>
                 <li>Chicken Fry</li>
@@ -188,15 +187,18 @@
                 <li>Fish Pulusu</li>
               </ul>
             </div>
+            <img
+              src="images/nonveg_curries.png"
+              alt="Non-Veg Curries"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Biryani Specials -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/biryani_specials.png" alt="Biryani Specials" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4">🍚 Biryani Specials</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-amber-700 mb-4">🍚 Biryani Specials</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Mix Veg Biryani</li>
                 <li>Chicken Biryani</li>
                 <li>Mutton Biryani</li>
@@ -204,15 +206,18 @@
                 <li>Egg Biryani</li>
               </ul>
             </div>
+            <img
+              src="images/biryani_specials.png"
+              alt="Biryani Specials"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
 
           <!-- Rice Varieties -->
-          <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/rice_varieties.png" alt="Rice Varieties" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
-            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
-            <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Rice Varieties</h3>
-              <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
+          <div class="card relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden flex items-center justify-between">
+            <div class="relative z-10 max-w-[65%]">
+              <h3 class="text-2xl font-semibold text-yellow-700 mb-4">🍛 Rice Varieties</h3>
+              <ul class="list-disc list-inside text-white font-medium space-y-1 drop-shadow-md">
                 <li>Pulihora (Tamarind Rice)</li>
                 <li>Mint Rice</li>
                 <li>Lemon Rice</li>
@@ -223,6 +228,11 @@
                 <li>Veg Pulao</li>
               </ul>
             </div>
+            <img
+              src="images/rice_varieties.png"
+              alt="Rice Varieties"
+              class="card-img absolute right-0 bottom-0 h-4/5 opacity-70 object-contain pointer-events-none"
+            />
           </div>
         </div>
 
@@ -248,7 +258,7 @@
       </footer>
     </div>
 
-    <!-- Background Crossfade + Zoom Script -->
+    <!-- Background slideshow script -->
     <script>
       const images = [
         "images/bg_1.jpg",
@@ -263,9 +273,6 @@
 
       divs[0].style.backgroundImage = `url('${images[0]}')`;
       divs[1].style.backgroundImage = `url('${images[1]}')`;
-
-      divs[0].style.animation = "zoom 20s ease-in-out infinite";
-      divs[1].style.animation = "zoom 20s ease-in-out infinite";
 
       setInterval(() => {
         const nextDiv = 1 - currentDiv;
