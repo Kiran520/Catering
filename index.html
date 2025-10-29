@@ -44,12 +44,21 @@
         }
       }
 
-      /* Hover zoom for card backgrounds */
+      /* Hover zoom for card images */
       .card-bg {
         transition: transform 4s ease-in-out;
       }
       .card-bg:hover {
         transform: scale(1.05);
+      }
+
+      /* Soft gradient overlay for PNG visibility */
+      .card-overlay {
+        background: linear-gradient(
+          to bottom right,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.05)
+        );
       }
     </style>
   </head>
@@ -88,8 +97,8 @@
 
           <!-- Veg Starters -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_starters.jpg" alt="Veg Starters" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/veg_starters.png" alt="Veg Starters" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🌿 Veg Starters</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -107,8 +116,8 @@
 
           <!-- Non-Veg Starters -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/nonveg_starters.jpg" alt="Non-Veg Starters" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/nonveg_starters.png" alt="Non-Veg Starters" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍗 Non-Veg Starters</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -121,8 +130,8 @@
 
           <!-- Dal Specials -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/dal_specials.jpg" alt="Dal Specials" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/dal_specials.png" alt="Dal Specials" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Dal Specials</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -135,8 +144,8 @@
 
           <!-- Veg Curries -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_curries.jpg" alt="Veg Curries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/veg_curries.png" alt="Veg Curries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-green-700 drop-shadow-md mb-4">🥘 Veg Curries</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -151,8 +160,8 @@
 
           <!-- Vegetable Fries -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/veg_fries.jpg" alt="Vegetable Fries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/veg_fries.png" alt="Vegetable Fries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-orange-700 drop-shadow-md mb-4">🥦 Vegetable Fries</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -166,8 +175,8 @@
 
           <!-- Non-Veg Curries -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/nonveg_curries.jpg" alt="Non-Veg Curries" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/nonveg_curries.png" alt="Non-Veg Curries" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-red-700 drop-shadow-md mb-4">🍖 Non-Veg Curries</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -183,8 +192,8 @@
 
           <!-- Biryani Specials -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/biryani_specials.jpg" alt="Biryani Specials" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/biryani_specials.png" alt="Biryani Specials" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-amber-700 drop-shadow-md mb-4">🍚 Biryani Specials</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -199,8 +208,8 @@
 
           <!-- Rice Varieties -->
           <div class="relative bg-white/30 backdrop-blur-md shadow-lg rounded-2xl p-6 hover:shadow-xl transition overflow-hidden">
-            <img src="images/rice_varieties.jpg" alt="Rice Varieties" class="absolute inset-0 w-full h-full object-cover opacity-30 card-bg" />
-            <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+            <img src="images/rice_varieties.png" alt="Rice Varieties" class="absolute inset-0 w-full h-full object-contain opacity-60 card-bg" />
+            <div class="absolute inset-0 card-overlay backdrop-blur-sm"></div>
             <div class="relative z-10">
               <h3 class="text-2xl font-semibold text-yellow-700 drop-shadow-md mb-4">🍛 Rice Varieties</h3>
               <ul class="list-disc list-inside text-white space-y-1 drop-shadow-md font-medium">
@@ -215,7 +224,6 @@
               </ul>
             </div>
           </div>
-
         </div>
 
         <!-- WhatsApp CTA -->
