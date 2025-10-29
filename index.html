@@ -311,29 +311,34 @@
 
     <!-- 🔶 Image Popup Script -->
     <script>
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-      const closeModal = document.getElementById("closeModal");
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeModal = document.getElementById("closeModal");
 
-      document.querySelectorAll(".menu-card img, .rounded-xl").forEach((img) => {
-        img.addEventListener("click", () => {
-          modalImage.src = img.src;
-          modal.classList.remove("hidden");
-          document.body.classList.add("overflow-hidden");
-        });
-      });
+  // Select only card images inside menu-card
+  const cardImages = document.querySelectorAll(".menu-card img");
 
-      closeModal.addEventListener("click", () => {
-        modal.classList.add("hidden");
-        document.body.classList.remove("overflow-hidden");
-      });
+  cardImages.forEach((img) => {
+    img.style.cursor = "pointer"; // ensure pointer
+    img.addEventListener("click", () => {
+      modalImage.src = img.src;
+      modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden"); // prevent scrolling
+    });
+  });
 
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.classList.add("hidden");
-          document.body.classList.remove("overflow-hidden");
-        }
-      });
-    </script>
+  closeModal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  });
+
+  // Close modal on background click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+  });
+</script>
   </body>
 </html>
